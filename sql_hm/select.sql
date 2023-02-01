@@ -15,4 +15,4 @@ SELECT executor_name FROM executor
 	WHERE executor_name NOT LIKE '% %';
 
 SELECT track_name FROM track
-	WHERE track_name LIKE '%My%';
+	WHERE string_to_array(lower(track_name),' ') && ARRAY['my'];
